@@ -29,11 +29,12 @@ removeDoneTasks.addEventListener('click', ()=>{
 })
 
 btnAdd.addEventListener('click', ()=>{
-    let inputValue= document.getElementById('taskInput').value
-    if(inputValue){
-        Globaldata.push({id: +new Date(), task: inputValue, state: false})
+    let inputValue= document.getElementById('taskInput')
+    if(inputValue.value){
+        Globaldata.push({id: +new Date(), task: inputValue.value, state: false})
         let item=Globaldata[Globaldata.length-1]
         new Task(taskList, html(item), item)
+        inputValue.value=''
     }
 })
 
